@@ -1,0 +1,22 @@
+server:
+    port: 8012
+spring:
+    application:
+        name: cloud-config
+    cloud:
+        config:
+            server:
+                git:
+                    clone-on-start: true
+                    uri: file:///C:/workspace/cloud-config/config-files
+                  #  uri : https://github.com/auditz-in/config-repo.git
+                    default-label: master
+                    search-paths:
+                        - "/{application}"
+                        
+                        
+encrypt:
+     key-store:
+        location: classpath:key/myApiTutorialKey.jks
+        password: a1b2c3d4
+        alias: myApiTutorialKey                        
